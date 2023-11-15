@@ -23,7 +23,7 @@ class NoteAppHeader extends React.Component {
         return (
             <div className="note-app__header">
                 <h1>Notes</h1>
-                <input type="text" className="note-search" onChange={this.onSearchChangeHandler} placeholder="Cari catatan..." />
+                <input type="text" className="note-search" onChange={this.onSearchChangeHandler} value={this.state.search} placeholder="Cari catatan..." />
             </div>
         );
     }
