@@ -13,6 +13,8 @@ class NoteAppBody extends React.Component {
                 <NoteInput />
                 <h2>Catatan Aktif</h2>
                 <NotesList />
+                <h2>Arsip</h2>
+                <NotesList />
             </div>
         )
     }
