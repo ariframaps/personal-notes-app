@@ -15,60 +15,64 @@
 <body>
   <div id="root">
 
-    <div class="note-app__header">
-      <h1>Notes</h1>
-      <input type="text" class="note-search" placeholder="Cari catatan ...">
-    </div>
+    <div class="note-app">
 
-    <div class="note-app__body">
-      <div class="note-input">
-        <h2>Buat catatan</h2>
-        <p class="note-input__title__char-limit">Sisa karaker: 50</p>
-        <input type="text" class="note-input__title" placeholder="Ini adalah judul">
-        <textarea class="note-input__body" placeholder="Tuliskan catatanmu disini"></textarea>
-        <button type="submit">Buat</button>
+      <div class="note-app__header">
+        <h1>Notes</h1>
+        <input type="text" class="note-search" placeholder="Cari catatan ...">
       </div>
 
-      <h2>Catatan Aktif</h2>
-      <div class="notes-list">
-        <!-- <div class="notes-list__empty-message">Tidak ada catatan</div> -->
-        <div class="note-item">
-          <div class="note-item__content">
-            <h3 class="note-item__title">Babel</h3>
-            <p class="note-item__date">Kamis, 14 April 2022</p>
-            <p class="note-item__body">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod, ipsum voluptas?
-              Dolores, saepe excepturi fugiat, reprehenderit soluta, ipsum nobis magnam corrupti vel exercitationem
-              cupiditate? Molestiae eos obcaecati, harum ad a ut, repudiandae sequi quam, cupiditate officiis rerum
-              dolores nemo distinctio suscipit maxime impedit totam. In maxime cupiditate consequuntur illum placeat.
-            </p>
+      <div class="note-app__body">
+        <form class="note-input">
+          <h2>Buat catatan</h2>
+          <p class="note-input__title__char-limit">Sisa karaker: 50</p>
+          <input type="text" class="note-input__title" placeholder="Ini adalah judul">
+          <textarea class="note-input__body" placeholder="Tuliskan catatanmu disini"></textarea>
+          <button type="submit">Buat</button>
+        </form>
+
+        <h2>Catatan Aktif</h2>
+        <div class="notes-list">
+          <!-- <div class="notes-list__empty-message">Tidak ada catatan</div> -->
+          <div class="note-item">
+            <div class="note-item__content">
+              <h3 class="note-item__title">Babel</h3>
+              <p class="note-item__date">Kamis, 14 April 2022</p>
+              <p class="note-item__body">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod, ipsum voluptas?
+                Dolores, saepe excepturi fugiat, reprehenderit soluta, ipsum nobis magnam corrupti vel exercitationem
+                cupiditate? Molestiae eos obcaecati, harum ad a ut, repudiandae sequi quam, cupiditate officiis rerum
+                dolores nemo distinctio suscipit maxime impedit totam. In maxime cupiditate consequuntur illum placeat.
+              </p>
+            </div>
+            <div class="note-item__action">
+              <button type="button" class="note-item__delete-button">Delete</button>
+              <button type="button" class="note-item__archive-button">Archive</button>
+            </div>
           </div>
-          <div class="note-item__action">
-            <button type="button" class="note-item__delete-button">Delete</button>
-            <button type="button" class="note-item__archive-button">Archive</button>
+        </div>
+
+        <h2>Arsip</h2>
+        <div class="notes-list">
+          <!-- <div class="notes-list__empty-message">Tidak ada catatan</div> -->
+          <div class="note-item">
+            <div class="note-item__content">
+              <h3 class="note-item__title">Babel</h3>
+              <p class="note-item__date">Kamis, 14 April 2022</p>
+              <p class="note-item__body">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod, ipsum voluptas?
+                Dolores, saepe excepturi fugiat, reprehenderit soluta, ipsum nobis magnam corrupti vel exercitationem
+                cupiditate? Molestiae eos obcaecati, harum ad a ut, repudiandae sequi quam, cupiditate officiis rerum
+                dolores nemo distinctio suscipit maxime impedit totam. In maxime cupiditate consequuntur illum placeat.
+              </p>
+            </div>
+            <div class="note-item__action">
+              <button type="button" class="note-item__delete-button">Delete</button>
+              <button type="button" class="note-item__archive-button">Archive</button>
+            </div>
           </div>
         </div>
       </div>
-
-      <h2>Arsip</h2>
-      <div class="notes-list">
-        <!-- <div class="notes-list__empty-message">Tidak ada catatan</div> -->
-        <div class="note-item">
-          <div class="note-item__content">
-            <h3 class="note-item__title">Babel</h3>
-            <p class="note-item__date">Kamis, 14 April 2022</p>
-            <p class="note-item__body">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod, ipsum voluptas?
-              Dolores, saepe excepturi fugiat, reprehenderit soluta, ipsum nobis magnam corrupti vel exercitationem
-              cupiditate? Molestiae eos obcaecati, harum ad a ut, repudiandae sequi quam, cupiditate officiis rerum
-              dolores nemo distinctio suscipit maxime impedit totam. In maxime cupiditate consequuntur illum placeat.
-            </p>
-          </div>
-          <div class="note-item__action">
-            <button type="button" class="note-item__delete-button">Delete</button>
-            <button type="button" class="note-item__archive-button">Archive</button>
-          </div>
-        </div>
-      </div>
     </div>
+
 
   </div>
   <script type="module" src="/src/main.jsx"></script>
