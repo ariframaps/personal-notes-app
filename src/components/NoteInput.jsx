@@ -5,7 +5,6 @@ class NoteInput extends React.Component {
         super(props);
 
         this.state = {
-            charLimit: 50,
             noteTitle: '',
             noteBody: ''
         }
