@@ -1,6 +1,11 @@
 import React from "react";
 
-function NoteItemContent({ title, date, body }) {
+function NoteItemContent({ title, createdAt, body }) {
+    // mengubah format createdAt menjadi dadte
+    createdAt = new Date(createdAt);
+    const dateFormat = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
+    const date = createdAt.toLocaleDateString('id-ID', dateFormat)
+
     return (
         <div className="note-item__content">
             <h3 className="note-item__title">{title}</h3>

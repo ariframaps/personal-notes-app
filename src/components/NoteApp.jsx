@@ -19,9 +19,6 @@ class NoteApp extends React.Component {
     }
 
     onAddNoteHandler({ title, body }) {
-        const dateFormat = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
-        const dateToday = new Date();
-
         this.setState((prevState) => {
             return {
                 notes: [
@@ -29,8 +26,8 @@ class NoteApp extends React.Component {
                         id: +new Date(),
                         title,
                         body,
-                        date: dateToday.toLocaleDateString('id-ID', dateFormat),
-                        isArchived: false
+                        createdAt: new Date().toISOString(),
+                        archived: false
                     }
                 ]
             }
@@ -44,10 +41,10 @@ class NoteApp extends React.Component {
 
     onArchiveHandler(id) {
         const archivedNotes = this.state.notes.find(note => note.id === id);
-        if (archivedNotes.isArchived === true) {
-            archivedNotes.isArchived = false;
+        if (archivedNotes.archived === true) {
+            archivedNotes.archived = false;
         } else {
-            archivedNotes.isArchived = true;
+            archivedNotes.archived = true;
         }
         this.setState({ notes: this.state.notes })
     }

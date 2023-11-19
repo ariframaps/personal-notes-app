@@ -5,13 +5,13 @@ function NotesList({ notes, onDelete, onArchive, archive, searchValue }) {
     let filterNotes;
 
     // memfilter catatan sesuai dengan bagiannya. bagian "catatan" jika false
-    // dan bagian "arsip" jika tru
+    // dan bagian "arsip" jika true
     if (archive) {
         filterNotes = notes
-            .filter(note => note.isArchived === true)
+            .filter(note => note.archived === true)
     } else {
         filterNotes = notes
-            .filter(note => note.isArchived === false)
+            .filter(note => note.archived === false)
     }
 
     // menampilkan pesan jika tidak ada catatan
