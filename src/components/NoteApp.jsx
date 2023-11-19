@@ -1,7 +1,7 @@
 import React from "react";
 import NoteAppHeader from "./NoteAppHeader";
 import NoteAppBody from "./NoteAppBody";
-import { getInitialData, showFormattedDate } from "../utils/index";
+import { getInitialData } from "../utils/index";
 
 class NoteApp extends React.Component {
     constructor(props) {
