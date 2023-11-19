@@ -6,9 +6,9 @@ import NoteAppBody from "./components/NoteAppBody";
 
 const root = createRoot(document.getElementById("root"));
 root.render(
-    <div className="note-app">
-        <NoteAppHeader />
-        <NoteAppBody />
-    </div>
-    // <NoteApp />
+    // <div className="note-app">
+    //     <NoteAppHeader />
+    //     <NoteAppBody />
+    // </div>
+    <NoteApp />
 )

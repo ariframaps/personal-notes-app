@@ -17,6 +17,9 @@ class NoteAppHeader extends React.Component {
                 search: event.target.value
             }
         })
+        setTimeout(() => {
+            this.props.searchHandler(this.state);
+        })
     }
 
     render() {
