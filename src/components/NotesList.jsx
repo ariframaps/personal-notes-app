@@ -2,16 +2,15 @@ import React from "react";
 import NoteItem from "./NoteItem";
 
 function NotesList({ notes, onDelete, onArchive, archive, searchValue }) {
+    const searchedNotes = notes.filter(note => note.title.includes(searchValue)) // memfilter catatan berdasarkan pencarian
     let filterNotes;
 
     // memfilter catatan sesuai dengan bagiannya. bagian "catatan" jika false
     // dan bagian "arsip" jika true
     if (archive) {
-        filterNotes = notes
-            .filter(note => note.archived === true)
+        filterNotes = searchedNotes.filter(note => note.archived === true)
     } else {
-        filterNotes = notes
-            .filter(note => note.archived === false)
+        filterNotes = searchedNotes.filter(note => note.archived === false)
     }
 
     // menampilkan pesan jika tidak ada catatan
@@ -25,7 +24,6 @@ function NotesList({ notes, onDelete, onArchive, archive, searchValue }) {
         <div className="notes-list">
             {
                 filterNotes
-                    .filter(note => note.title.includes(searchValue)) // memfilter catatan berdasarkan pencarian
                     .map((note) => (
                         <NoteItem
                             key={note.id}
