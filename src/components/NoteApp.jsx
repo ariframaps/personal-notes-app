@@ -1,7 +1,7 @@
 import React from "react";
 import NoteAppHeader from "./NoteAppHeader";
 import NoteAppBody from "./NoteAppBody";
-import { getData } from "../utils/index";
+import { getData } from "../utils/data";
 
 class NoteApp extends React.Component {
     constructor(props) {
@@ -53,7 +53,6 @@ class NoteApp extends React.Component {
     }
 
     searchHandler({ search }) {
-        console.log(search);
         this.setState({ searchValue: search })
     }
 
@@ -66,31 +65,5 @@ class NoteApp extends React.Component {
         )
     }
 }
-
-// class NoteApp extends React.Component {
-//     constructor(props) {
-//         super(props);
-
-//         this.state = {
-//             searchValue: ''
-//         }
-
-//         this.searchHandler = this.searchHandler.bind(this);
-//     }
-
-//     searchHandler({ search }) {
-//         console.log(search);
-//         this.setState({ searchValue: search })
-//     }
-
-//     render() {
-//         return (
-//             <div className="note-app">
-//                 <NoteAppHeader searchHandler={this.searchHandler} />
-//                 <NoteAppBody searchValue={this.state.searchValue} />
-//             </div>
-//         )
-//     }
-// }
 
 export default NoteApp;

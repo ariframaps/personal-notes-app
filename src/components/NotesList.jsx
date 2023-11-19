@@ -2,13 +2,6 @@ import React from "react";
 import NoteItem from "./NoteItem";
 
 function NotesList({ notes, onDelete, onArchive, archive, searchValue }) {
-    if (notes.length == 0) {
-        return (
-            <div className="notes-list__empty-message">
-                Tidak ada catatan
-            </div>
-        );
-    }
 
     let filterNotes;
 
@@ -18,6 +11,14 @@ function NotesList({ notes, onDelete, onArchive, archive, searchValue }) {
     } else {
         filterNotes = notes
             .filter(note => note.isArchived === false)
+    }
+
+    if (filterNotes.length == 0) {
+        return (
+            <div className="notes-list__empty-message">
+                Tidak ada catatan
+            </div>
+        );
     }
 
     return (
