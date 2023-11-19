@@ -1,7 +1,7 @@
 import React from "react";
 import NoteAppHeader from "./NoteAppHeader";
 import NoteAppBody from "./NoteAppBody";
-import { getData } from "../utils/data";
+import { getInitialData, showFormattedDate } from "../utils/index";
 
 class NoteApp extends React.Component {
     constructor(props) {
@@ -9,7 +9,7 @@ class NoteApp extends React.Component {
 
         this.state = {
             searchValue: '',
-            notes: getData()
+            notes: getInitialData()
         }
 
         this.onAddNoteHandler = this.onAddNoteHandler.bind(this);
