@@ -5,23 +5,24 @@ class NoteInput extends React.Component {
         super(props);
 
         this.state = {
-            noteTitle: '',
-            noteBody: ''
+            title: '',
+            body: ''
         }
 
         this.onNoteTitleChangeHandler = this.onNoteTitleChangeHandler.bind(this);
         this.onNoteBodyChangeHandler = this.onNoteBodyChangeHandler.bind(this);
+        this.onSubmitEventHandler = this.onSubmitEventHandler.bind(this);
     }
 
     onNoteTitleChangeHandler(event) {
         this.setState(() => {
             if (event.target.value.length > 50) {
                 return {
-                    noteTitle: this.state.noteTitle
+                    title: this.state.title
                 }
             } else {
                 return {
-                    noteTitle: event.target.value
+                    title: event.target.value
                 }
             }
 
@@ -31,20 +32,25 @@ class NoteInput extends React.Component {
     onNoteBodyChangeHandler(event) {
         this.setState(() => {
             return {
-                noteBody: event.target.value
+                body: event.target.value
             }
         })
     }
 
+    onSubmitEventHandler(event) {
+        event.preventDefault();
+        this.props.addNote(this.state);
+    }
+
     render() {
-        const charLimit = 50 - (this.state.noteTitle.length);
+        const charLimit = 50 - (this.state.title.length);
 
         return (
-            <form className="note-input">
+            <form className="note-input" onSubmit={this.onSubmitEventHandler}>
                 <h2>Buat</h2>
                 <p className="note-input__title__char-limit">Sisa karakter: <span>{charLimit}</span></p>
-                <input type="text" className="note-input__title" onChange={this.onNoteTitleChangeHandler} value={this.state.noteTitle} />
-                <textarea className="note-input__body" onChange={this.onNoteBodyChangeHandler} value={this.state.noteBody}></textarea>
+                <input type="text" className="note-input__title" onChange={this.onNoteTitleChangeHandler} value={this.state.title} placeholder="Ini adalah judul" />
+                <textarea className="note-input__body" onChange={this.onNoteBodyChangeHandler} value={this.state.body} placeholder="Tuliskan catatanmu disini..."></textarea>
                 <button type="submit">Buat</button>
             </form>
         )

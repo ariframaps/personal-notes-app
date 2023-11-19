@@ -1,14 +1,38 @@
 import React from "react";
 import NoteItem from "./NoteItem";
 
-class NotesList extends React.Component {
-    render() {
+function NotesList({ notes, onDelete, onArchive, archive }) {
+    if (notes.length == 0) {
         return (
-            <div className="notes-list">
-                <NoteItem />
+            <div className="notes-list__empty-message">
+                Tidak ada catatan
             </div>
-        )
+        );
     }
+
+    let filterNotes;
+
+    if (archive) {
+        filterNotes = notes.filter(note => note.isArchived === true);
+    } else {
+        filterNotes = notes.filter(note => note.isArchived === false);
+    }
+
+    return (
+        <div className="notes-list">
+            {
+                filterNotes.map((note) => (
+                    <NoteItem
+                        key={note.id}
+                        onDelete={onDelete}
+                        onArchive={onArchive}
+                        archive={archive}
+                        {...note}
+                    />
+                ))
+            }
+        </div>
+    )
 }
 
 export default NotesList;
