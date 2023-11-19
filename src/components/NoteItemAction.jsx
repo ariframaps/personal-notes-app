@@ -1,6 +1,9 @@
 import React from "react";
 
 function NoteItemAction({ id, onDelete, onArchive, archive }) {
+
+    //  melihat apakah catatan yang ditampilkan berada di bagian arsip atau tidak.
+    //  untuk mengubah isi dari tombol dari arsipkan
     let text;
     if (archive) {
         text = "Pindahkan";

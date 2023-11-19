@@ -53,7 +53,7 @@ class NoteApp extends React.Component {
     }
 
     searchHandler({ search }) {
-        this.setState({ searchValue: search })
+        this.setState({ searchValue: search }) // mengambil nilai search dari class "NoteAppHeader" untuk ditaruh di state
     }
 
     render() {
