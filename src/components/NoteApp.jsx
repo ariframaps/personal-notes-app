@@ -16,6 +16,8 @@ class NoteApp extends React.Component {
         this.onDeleteHandler = this.onDeleteHandler.bind(this);
         this.onArchiveHandler = this.onArchiveHandler.bind(this);
         this.searchHandler = this.searchHandler.bind(this);
+        this.loadContentFromStorage = this.loadContentFromStorage.bind(this);
+        // this.isStorageExist = this.isStorageExist.bind(this);
     }
 
     onAddNoteHandler({ title, body }) {
@@ -52,6 +54,14 @@ class NoteApp extends React.Component {
     searchHandler({ search }) {
         this.setState({ searchValue: search }) // mengambil nilai search dari class "NoteAppHeader" untuk ditaruh di state
     }
+
+    loadContentFromStorage() {
+        alert('makanan');
+    }
+
+    // isStorageExists() {
+    //     true;
+    // }
 
     render() {
         return (
